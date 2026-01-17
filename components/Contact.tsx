@@ -9,8 +9,7 @@ export const Contact: React.FC = () => {
     name: '',
     email: '',
     phone: '',
-    industry: '',
-    website: ''
+    industry: ''
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -41,7 +40,7 @@ export const Contact: React.FC = () => {
 
         if (response.ok) {
             setSubmitted(true);
-            setFormData({ name: '', email: '', phone: '', industry: '', website: '' });
+            setFormData({ name: '', email: '', phone: '', industry: '' });
         } else {
             alert("Something went wrong. Please email us directly at hello@millecube.com");
         }
@@ -170,36 +169,20 @@ export const Contact: React.FC = () => {
                     </div>
                 </div>
                 
-                {/* Industry & Website Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                    <div>
-                        <label htmlFor="industry" className="flex items-center gap-2 text-sm font-bold text-gray-700 mb-1.5">
-                            <Briefcase size={14} className="text-primary"/> Industry
-                        </label>
-                        <input 
-                            required 
-                            type="text" 
-                            id="industry" 
-                            value={formData.industry}
-                            onChange={handleChange}
-                            className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all" 
-                            placeholder="e.g. Fashion" 
-                        />
-                    </div>
-                    <div>
-                        <label htmlFor="website" className="flex items-center gap-2 text-sm font-bold text-gray-700 mb-1.5">
-                            <Globe size={14} className="text-primary"/> Business URL
-                        </label>
-                        <input 
-                            required 
-                            type="url" 
-                            id="website" 
-                            value={formData.website}
-                            onChange={handleChange}
-                            className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all" 
-                            placeholder="https://..." 
-                        />
-                    </div>
+                {/* Industry */}
+                <div>
+                    <label htmlFor="industry" className="flex items-center gap-2 text-sm font-bold text-gray-700 mb-1.5">
+                        <Briefcase size={14} className="text-primary"/> Industry
+                    </label>
+                    <input 
+                        required 
+                        type="text" 
+                        id="industry" 
+                        value={formData.industry}
+                        onChange={handleChange}
+                        className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all" 
+                        placeholder="e.g. Fashion" 
+                    />
                 </div>
 
                 <div className="pt-2">

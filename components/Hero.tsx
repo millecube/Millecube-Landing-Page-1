@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { Button } from './Button';
-import { CheckCircle2, ShieldCheck, Zap, BarChart3, PlayCircle, ArrowRight } from 'lucide-react';
+import { CheckCircle2, ShieldCheck, Zap, BarChart3, ArrowRight } from 'lucide-react';
 import { ChartSection } from './ChartSection';
 import { PlatformTicker } from './PlatformTicker';
 
@@ -81,10 +81,11 @@ export const Hero: React.FC = () => {
             <Button 
                 variant="outline" 
                 className="px-10 py-4 text-lg border-gray-700 text-gray-300 hover:text-white hover:border-white hover:bg-white/5 rounded-full"
+                onClick={() => document.getElementById('audience')?.scrollIntoView({behavior:'smooth'})}
             >
                 <div className="flex items-center gap-2">
-                    <PlayCircle size={20} />
-                    View Case Studies
+                    <CheckCircle2 size={20} />
+                    Is This You?
                 </div>
             </Button>
         </div>

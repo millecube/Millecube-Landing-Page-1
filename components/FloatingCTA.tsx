@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from './Button';
-import { ArrowRight } from 'lucide-react';
+import { MessageCircle } from 'lucide-react';
 
 export const FloatingCTA: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -29,10 +29,10 @@ export const FloatingCTA: React.FC = () => {
         <Button 
           variant="bubble" 
           fullWidth
-          onClick={() => document.getElementById('contact')?.scrollIntoView({behavior: 'smooth'})}
-          className="shadow-[0_4px_15px_rgba(24,99,220,0.5)] border border-accent/20 backdrop-blur-sm flex items-center justify-center gap-2 py-4 md:py-3 md:px-8 text-lg md:text-base font-bold"
+          onClick={() => window.open('https://wasap.my/60179012938', '_blank')}
+          className="shadow-[0_4px_15px_rgba(37,211,102,0.4)] hover:shadow-[0_8px_25px_rgba(37,211,102,0.5)] border border-green-400/20 backdrop-blur-sm flex items-center justify-center gap-2 py-4 md:py-3 md:px-8 text-lg md:text-base font-bold !bg-none bg-green-600 hover:bg-green-500"
         >
-          Start Your Audit <ArrowRight size={20} className="hidden md:block" />
+          Whatsapp Us <MessageCircle size={20} className="hidden md:block" />
         </Button>
       </div>
     </div>
