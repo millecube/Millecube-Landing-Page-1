@@ -18,21 +18,39 @@ export const Contact: React.FC = () => {
     setFormData(prev => ({ ...prev, [id]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     
-    // In a real application, this would send data to a backend endpoint
-    // which handles sending the notification email to hello@millecube.com
-    // and the auto-reply to the user.
-    console.log("Form Data Submitted:", formData);
-    console.log("Simulating email to hello@millecube.com");
-    console.log(`Simulating auto-reply to ${formData.email}`);
-    
-    setTimeout(() => {
-      setLoading(false);
-      setSubmitted(true);
-    }, 1500);
+    // Using FormSubmit.co to send emails without a backend server
+    // Note: The first time you trigger this, you will receive an activation email at hello@millecube.com
+    try {
+        const response = await fetch("https://formsubmit.co/ajax/hello@millecube.com", {
+            method: "POST",
+            headers: { 
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+                _subject: `New Lead: ${formData.name} (${formData.industry})`, // Email Subject
+                _template: "table", // Formats the email as a nice table
+                _autoresponse: "Thank you for contacting Millecube. We have received your audit request and will be in touch shortly.", // Auto-reply text
+                ...formData
+            })
+        });
+
+        if (response.ok) {
+            setSubmitted(true);
+            setFormData({ name: '', email: '', phone: '', industry: '', website: '' });
+        } else {
+            alert("Something went wrong. Please email us directly at hello@millecube.com");
+        }
+    } catch (error) {
+        console.error("Form submission error:", error);
+        alert("Network error. Please try again or email us directly.");
+    } finally {
+        setLoading(false);
+    }
   };
 
   return (
@@ -85,7 +103,7 @@ export const Contact: React.FC = () => {
                 <div>
                     <h4 className="text-3xl font-bold text-gray-900 mb-2">Application Received!</h4>
                     <p className="text-gray-500 max-w-sm mx-auto">
-                        We've sent a confirmation email to <span className="text-gray-900 font-bold">{formData.email}</span>.
+                        We have successfully received your details.
                     </p>
                     <p className="text-gray-500 mt-2 max-w-sm mx-auto text-sm">
                         Our team has been notified and will analyze your request. You can expect a personal response within 24 hours.
@@ -94,7 +112,6 @@ export const Contact: React.FC = () => {
                 <Button 
                     onClick={() => {
                         setSubmitted(false); 
-                        setFormData({...formData, name: '', email: '', phone: '', industry: '', website: ''});
                     }} 
                     variant="outline"
                     className="mt-4"
