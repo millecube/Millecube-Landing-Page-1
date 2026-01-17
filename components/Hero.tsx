@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import { Button } from './Button';
 import { CheckCircle2, ShieldCheck, Zap, BarChart3, PlayCircle } from 'lucide-react';
 import { ChartSection } from './ChartSection';
+import { PlatformTicker } from './PlatformTicker';
 
 export const Hero: React.FC = () => {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -19,7 +20,7 @@ export const Hero: React.FC = () => {
   };
 
   return (
-    <section id="hero" className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-dark-950 text-white min-h-screen flex items-center">
+    <section id="hero" className="relative pt-32 pb-0 lg:pt-48 overflow-hidden bg-dark-950 text-white min-h-screen flex flex-col justify-center">
       
       {/* --- Ambient Background Effects --- */}
       <div className="absolute inset-0 z-0">
@@ -35,7 +36,7 @@ export const Hero: React.FC = () => {
         <div className="absolute inset-0" style={{ backgroundImage: 'linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full mb-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-8 items-center">
           
           {/* --- Left Column: Copywriting with Torch Effect --- */}
@@ -65,10 +66,9 @@ export const Hero: React.FC = () => {
             </div>
             
             {/* Main Headlines */}
-            <div className="relative z-10 space-y-4">
+            <div className="relative z-10 space-y-2">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold font-heading leading-[1.1] tracking-tight">
-                Stop Burning <br/>
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">Ad Budget.</span>
+                Stop Burning
                 </h1>
                 
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold font-heading leading-[1.1] tracking-tight">
@@ -195,6 +195,9 @@ export const Hero: React.FC = () => {
           </div>
 
         </div>
+
+        {/* --- Logo Ticker Section --- */}
+        <PlatformTicker />
       </div>
       
       {/* Bottom Gradient Fade to White/Next Section */}
