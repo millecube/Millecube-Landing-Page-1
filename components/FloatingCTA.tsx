@@ -27,10 +27,10 @@ export const FloatingCTA: React.FC = () => {
     >
       <div className="max-w-md mx-auto md:mx-0">
         <Button 
-          variant="glow" 
+          variant="bubble" 
           fullWidth
           onClick={() => document.getElementById('contact')?.scrollIntoView({behavior: 'smooth'})}
-          className="shadow-[0_0_30px_rgba(50,205,50,0.3)] border border-accent/20 backdrop-blur-sm flex items-center justify-center gap-2 py-4 md:py-3 md:px-8 text-lg md:text-base font-bold"
+          className="shadow-[0_4px_15px_rgba(24,99,220,0.5)] border border-accent/20 backdrop-blur-sm flex items-center justify-center gap-2 py-4 md:py-3 md:px-8 text-lg md:text-base font-bold"
         >
           Start Your Audit <ArrowRight size={20} className="hidden md:block" />
         </Button>

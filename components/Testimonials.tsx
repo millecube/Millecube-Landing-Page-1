@@ -1,6 +1,7 @@
 import React from 'react';
 import { SectionHeader } from './SectionHeader';
 import { Quote, TrendingUp, ArrowRight } from 'lucide-react';
+import { Button } from './Button';
 
 const testimonials = [
   {
@@ -153,9 +154,9 @@ export const Testimonials: React.FC = () => {
               <h3 className="text-2xl font-bold mb-2 relative z-10 text-gray-900">Your Brand Here</h3>
               <p className="text-gray-500 text-sm mb-6 relative z-10 max-w-[200px]">Join these brands in scaling revenue with precision.</p>
               
-              <button className="bg-primary text-white px-8 py-3 rounded-lg font-bold text-sm hover:bg-accent hover:shadow-[0_0_20px_rgba(50,205,50,0.4)] transition-all shadow-md">
+              <Button variant="bubble" className="px-8 py-3 text-sm">
                 Get Case Studies
-              </button>
+              </Button>
           </div>
         </div>
       </div>

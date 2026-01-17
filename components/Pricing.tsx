@@ -95,7 +95,7 @@ export const Pricing: React.FC = () => {
               </ul>
 
               <Button 
-                variant={tier.highlight ? 'primary' : 'outline'} 
+                variant={tier.highlight ? 'bubble' : 'outline'} 
                 fullWidth
                 onClick={() => document.getElementById('contact')?.scrollIntoView({behavior:'smooth'})}
               >

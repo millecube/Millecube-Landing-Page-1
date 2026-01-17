@@ -33,6 +33,7 @@
               'blob': 'blob 7s infinite',
               'float': 'float 6s ease-in-out infinite',
               'marquee': 'marquee 25s linear infinite',
+              'fade-in-up': 'fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) both',
             },
             keyframes: {
               blob: {
@@ -48,6 +49,10 @@
               marquee: {
                 '0%': { transform: 'translateX(0%)' },
                 '100%': { transform: 'translateX(-100%)' },
+              },
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
               }
             }
           }

@@ -79,7 +79,7 @@ export const Contact: React.FC = () => {
                     </div>
                 </div>
 
-                <Button type="submit" fullWidth disabled={loading} className="flex items-center gap-2 justify-center">
+                <Button type="submit" variant="bubble" fullWidth disabled={loading} className="flex items-center gap-2 justify-center">
                   {loading ? 'Submitting...' : (
                     <>
                       Schedule Account Audit <Send size={18} />

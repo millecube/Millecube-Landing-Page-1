@@ -26,7 +26,6 @@ export const Navbar: React.FC = () => {
   const navBg = isScrolled ? 'bg-white shadow-lg py-2' : 'bg-transparent py-6';
   const textColor = isScrolled ? 'text-gray-600 hover:text-primary' : 'text-gray-200 hover:text-white';
   const logoFilter = isScrolled ? '' : 'brightness-0 invert';
-  const buttonVariant = isScrolled ? 'primary' : 'glow';
 
   return (
     <nav className={`fixed w-full z-50 transition-all duration-300 ${navBg}`}>
@@ -45,8 +44,9 @@ export const Navbar: React.FC = () => {
           <div className="hidden md:flex items-center space-x-8">
             <button onClick={() => scrollToSection('features')} className={`${textColor} font-medium transition-colors text-sm uppercase tracking-wide`}>Why Us</button>
             <button onClick={() => scrollToSection('audience')} className={`${textColor} font-medium transition-colors text-sm uppercase tracking-wide`}>Who We Help</button>
+            <button onClick={() => scrollToSection('services')} className={`${textColor} font-medium transition-colors text-sm uppercase tracking-wide`}>Services</button>
             <button onClick={() => scrollToSection('pricing')} className={`${textColor} font-medium transition-colors text-sm uppercase tracking-wide`}>Pricing</button>
-            <Button onClick={() => scrollToSection('contact')} variant={buttonVariant} className="px-6 py-2">
+            <Button onClick={() => scrollToSection('contact')} variant="bubble" className="px-6 py-2">
               Free Audit
             </Button>
           </div>
@@ -69,9 +69,10 @@ export const Navbar: React.FC = () => {
           <div className="px-4 pt-4 pb-6 space-y-2">
             <button onClick={() => scrollToSection('features')} className="block w-full text-left px-3 py-4 text-gray-300 hover:bg-dark-800 hover:text-white font-medium rounded-md">Why Us</button>
             <button onClick={() => scrollToSection('audience')} className="block w-full text-left px-3 py-4 text-gray-300 hover:bg-dark-800 hover:text-white font-medium rounded-md">Who We Help</button>
+            <button onClick={() => scrollToSection('services')} className="block w-full text-left px-3 py-4 text-gray-300 hover:bg-dark-800 hover:text-white font-medium rounded-md">Services</button>
             <button onClick={() => scrollToSection('pricing')} className="block w-full text-left px-3 py-4 text-gray-300 hover:bg-dark-800 hover:text-white font-medium rounded-md">Pricing</button>
             <div className="pt-4">
-              <Button onClick={() => scrollToSection('contact')} variant="glow" fullWidth>
+              <Button onClick={() => scrollToSection('contact')} variant="bubble" fullWidth>
                 Get Free Audit
               </Button>
             </div>
